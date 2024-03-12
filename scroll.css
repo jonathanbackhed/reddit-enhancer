@@ -1,0 +1,18 @@
+.scrollBtn {
+  height: 36px;
+  width: 36px;
+  background-color: #7a7777;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999999999;
+  margin: 1rem;
+  opacity: 0.7;
+}
+
+.centerText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -12,6 +12,11 @@
     {
       "matches": ["https://www.reddit.com/*"],
       "js": ["content.js"]
+    },
+    {
+      "matches": ["https://www.reddit.com/r/*"],
+      "css": ["scroll.css"],
+      "js": ["scroll.js"]
     }
   ]
 }
