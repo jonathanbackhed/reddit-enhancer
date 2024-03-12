@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "New Reddit Auto Dark Mode",
+  "description": "Automatically enable dark mode on new Reddit.",
+  "version": "1.0.0",
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.reddit.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
