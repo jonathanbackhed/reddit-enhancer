@@ -2,6 +2,9 @@ const post = document.querySelector("#main-content");
 const comments = document.querySelector("#comment-tree");
 console.log("COMMENTS IS " + comments);
 
+const NAVBAR_HEIGHT = 56;
+let commentIndex = 1;
+
 const targetNode = document.querySelector("#main-content");
 
 if (comments === null) {
@@ -41,15 +44,18 @@ if (comments === null) {
   });
 }
 
+// SCROLL BTN & LOGIC
 const createDomElement = (html) => {
   const dom = new DOMParser().parseFromString(html, "text/html");
   return dom.body.firstElementChild;
 };
 
 const scrollToNext = () => {
-  console.log("SCROLLING!!!!");
-  location.href = "#";
-  location.href = "#comment-1";
+  window.scrollTo({
+    top: cmt.offsetTop - NAVBAR_HEIGHT,
+    behavior: "smooth",
+  });
+  commentIndex++;
 };
 
 const scrollBtn = createDomElement(`
