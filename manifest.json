@@ -11,12 +11,8 @@
   "content_scripts": [
     {
       "matches": ["https://www.reddit.com/*"],
-      "js": ["content.js"]
-    },
-    {
-      "matches": ["https://www.reddit.com/r/*"],
-      "css": ["scroll.css"],
-      "js": ["scroll.js"]
+      "js": ["content.js", "scroll.js"],
+      "css": ["scroll.css"]
     }
   ]
 }
