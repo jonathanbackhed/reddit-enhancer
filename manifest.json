@@ -1,6 +1,6 @@
 {
   "name": "New Reddit Auto Dark Mode",
-  "description": "Enhances your Reddit experience with automatic dark/light-mode and other features",
+  "description": "Enhances your Reddit experience with automatic light/dark mode and other features",
   "version": "1.0.0",
   "manifest_version": 3,
   "icons": {

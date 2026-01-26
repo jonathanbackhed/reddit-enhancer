@@ -1,34 +1,44 @@
-const doc = document.documentElement;
-const btn = document.querySelector("[name='darkmode-switch-name']");
+let doc = document.documentElement;
+let btn;
 
 const darkModePref = window.matchMedia("(prefers-color-scheme: dark)");
 
 const setDarkTheme = () => {
-  btn.ariaChecked = true;
-  btn.setAttribute("checked", "");
+  if (btn) {
+    btn.setAttribute("checked", "");
+    btn.setAttribute("aria-checked", "true");
+  }
 
   doc.classList.remove("theme-light");
   doc.classList.add("theme-dark");
 };
 
 const setLightTheme = () => {
-  btn.ariaChecked = false;
-  btn.removeAttribute("checked");
+  if (btn) {
+    btn.removeAttribute("checked");
+    btn.removeAttribute("aria-checked");
+  }
 
   doc.classList.remove("theme-dark");
   doc.classList.add("theme-light");
 };
 
-if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  setDarkTheme();
-} else {
-  setLightTheme();
-}
+function init() {
+  btn = document.querySelector("[name='darkmode-switch-name']");
 
-darkModePref.addEventListener("change", (e) => {
-  if (e.matches) {
+  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
     setDarkTheme();
   } else {
     setLightTheme();
   }
-});
+
+  darkModePref.addEventListener("change", (e) => {
+    if (e.matches) {
+      setDarkTheme();
+    } else {
+      setLightTheme();
+    }
+  });
+}
+
+init();
